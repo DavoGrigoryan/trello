@@ -1,0 +1,22 @@
+{
+  "carts": [
+    {
+      "id": 1,
+      "status": "toDo",
+      "titleStatus": "To Do List",
+      "tasks":[
+        {
+          "id": 1,
+          "cardId": 1,
+          "title": "a"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "status": "done",
+      "titleStatus": "In Progress"
+
+    }
+  ]
+}

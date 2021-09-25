@@ -1,0 +1,24 @@
+<section class="lists-container" cdkDropListGroup>
+  <div  *ngFor="let items of tasks"
+      class="list"
+      cdkDropList
+      id="{{items.id}}"
+      [cdkDropListData]="items.task"
+      (cdkDropListDropped)="drop($event)"
+  >
+    <h3 class="list-title">{{items.title}}</h3>
+    <span class="removeStatus" *ngIf="items.id != 1" (click)="removeStatus(items.id)" title="Remove">X</span>
+    <ul class="list-items">
+      <li class="example-box" *ngFor="let item of items.task" cdkDrag >{{item.title}}</li>
+    </ul>
+
+    <form *ngIf="items.id==1" (ngSubmit)="addTask()" [formGroup]="form">
+     <p *ngIf="open">
+       <input type="text" formControlName="taskTitle"><button class="btnSend">Send task</button>
+     </p>
+      <button class="add-card-btn btn" (click)="open = !open">{{open?"Close":"Add a card"}}</button>
+    </form>
+
+
+  </div>
+</section>
